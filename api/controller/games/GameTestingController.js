@@ -9,7 +9,7 @@ var path = require('path');
 const _ = require('lodash');
 
 const getGameList = async (req, res, next) => {
-        console.log(req.body);
+     //   console.log(req.body);
     gameModel
         .find(req.body)
         .then((data) => {
@@ -158,7 +158,6 @@ async function getFileName(game_id, folder, domain) {
 
 const insertFilePath = async (req, res, next) => {
     var body = req.body.pathList;
-    console.log("insert error", body);
     if (req.body.pathList.length > 0) {
         await filePathModel.deleteMany()
         await filePathModel.create({
