@@ -158,10 +158,15 @@ async function getFileName(game_id, folder, domain) {
 
 const insertFilePath = async (req, res, next) => {
     var body = req.body.pathList;
-    if (req.body.pathList.length > 0) {
+    if (body.length > 0) {
         await filePathModel.deleteMany()
+        var pl = []
+        for (let i = 0; i < body.length; i++) {
+            const el = body[i];
+            pl.push(el.path)
+        }
         await filePathModel.create({
-                pathList: body.toString()
+                pathList: pl.toString()
             })
             .then((err, data) => {
                 res.status(200).json(resModel.responseData("00", "Successful"));
