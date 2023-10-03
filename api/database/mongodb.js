@@ -4,7 +4,7 @@ mongoose.set('strictQuery', true);
              
 async function connectDB(params) {
   const uri =
-    "mongodb+srv://action_ed:11223344.Ae@cluster0.1yivf2q.mongodb.net/ae_classroom?retryWrites=true&w=majority";
+    "mongodb+srv://action_ed2:11223344.Ae@cluster0.1yivf2q.mongodb.net/ae_classroom?retryWrites=true&w=majority";
   mongoose
     .connect(uri)
     .then(() => {
