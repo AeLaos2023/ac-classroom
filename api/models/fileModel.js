@@ -1,13 +1,15 @@
 const mongoose = require("mongoose");
 
 const lessonSchema = new mongoose.Schema({
-
-  gameID: {
+  group_code: {
     type: "String",
   },
-  fileList: {
+  group_name: {
     type: "String",
+  },
+  path_list: {
+    type: ["String"],
   },
 });
 
-module.exports = mongoose.model("files", lessonSchema);
+module.exports = mongoose.model("file_groups", lessonSchema);
