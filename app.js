@@ -43,10 +43,13 @@ app.use((req, res, next) => {
 const indexRouter = require("./api/routes/index");
 const lessonsRouter = require("./api/routes/lessons");
 const GameTestingRouter = require("./api/routes/games/GameTestingRouter");
+const filesRouter = require("./api/routes/files");
 
 app.use("/api/", indexRouter);
 app.use("/api/lessons", lessonsRouter);
 app.use("/api/game/testing", GameTestingRouter);
+app.use("/api/game/testing", GameTestingRouter);
+app.use("/api/file", filesRouter);
 
 // Find 404 and hand over to error handler
 app.use((req, res, next) => {
